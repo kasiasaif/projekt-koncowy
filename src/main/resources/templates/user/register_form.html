@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Rejestracja</title>
+
 </head>
 <body>
+<h1>Nazwa sklepu</h1>
+<form autocomplete="off" th:action="@{sign_up}" method="post" th:object="${user}">
+    <div>
+        <label>Email<input type="text" th:field="*{email}"></label>
+    </div>
+    <div>
+        <label>Haslo<input type="text" th:field="*{password}"></label>
 
+        <a th:href="@{/user/sign_up}">Zaloguj sie!</a>
+    </div>
+</form>
+<form autocomplete="off" th:action="@{register}" method="post" th:object="${user}">
+    <h2>Jestes tu pierwszy raz?</h2>
+    <div>
+        <label>Imie <input type="text" th:field="*{firstName}"></label>
+    </div>
+    <div>
+        <label>Nazwisko <input type="text" th:field="*{lastName}"></label>
+    </div>
+    <div>
+        <label>Data urodzenia <input type="date" th:fiels="*{daterOfBirth}"></input></label>
+    </div>
+    <div>
+        <label>Adres <input type="text" th:field="*{address}"></label>
+
+    </div>
+    <div>
+        <label>e-mail <input type="text" th:field="*{email}"></label>
+    </div>
+    <div>
+        <label>Haslo <input type="text" th:field="*{password}"></label>
+    </div>
+    <a th:href="@{/user/register_conformation}">Zaloz konto</a>
+</form>
 </body>
 </html>

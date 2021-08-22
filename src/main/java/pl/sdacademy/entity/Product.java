@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.entity;
 
 import javax.persistence.*;
 
@@ -15,6 +15,7 @@ public class Product {
     private String image;
     @ManyToOne
     private Category category;
+
     public Product() {
     }
 

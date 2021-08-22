@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sdacademy.Product;
+import pl.sdacademy.entity.Product;
 import pl.sdacademy.repository.ProductRepository;
 
 import java.util.List;

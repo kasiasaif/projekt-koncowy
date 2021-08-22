@@ -1,8 +1,8 @@
-package pl.sdacademy;
+package pl.sdacademy.entity;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Category {
@@ -12,7 +12,7 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Product> cos=new HashSet<>();
+    private List<Product> productList =new ArrayList<>();
 
 
     public Category() {
