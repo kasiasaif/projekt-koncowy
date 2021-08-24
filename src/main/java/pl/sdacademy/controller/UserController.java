@@ -3,8 +3,8 @@ package pl.sdacademy.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sdacademy.entity.User;
 import pl.sdacademy.repository.UserRepository;
+import pl.sdacademy.entity.User;
 
 import java.util.Map;
 
@@ -32,6 +32,5 @@ public class UserController {
     @GetMapping("/register_conformation")
     public String register() {
         return "user/register_conformation";
-
     }
 }

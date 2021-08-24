@@ -1,32 +1,33 @@
 package pl.sdacademy.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name= "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
-    private String email;
+    @Column(unique = true)
+    private String userName;
     private String password;
+    private String email;
     private LocalDate daterOfBirth;
     private String address;
 
     public User() {
     }
 
-    public User(int id, String firstName, String lastName, String email, String password, LocalDate daterOfBirth, String address) {
+    public User(int id, String firstName, String lastName, String userName, String password, String email, LocalDate daterOfBirth, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.userName = userName;
         this.password = password;
+        this.email = email;
         this.daterOfBirth = daterOfBirth;
         this.address = address;
     }
@@ -43,12 +44,16 @@ public class User {
         return lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public LocalDate getDaterOfBirth() {
@@ -71,12 +76,16 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setDaterOfBirth(LocalDate daterOfBirth) {
@@ -93,8 +102,9 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
                 ", daterOfBirth=" + daterOfBirth +
                 ", address='" + address + '\'' +
                 '}';
