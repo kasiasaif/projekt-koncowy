@@ -6,5 +6,5 @@ import pl.sdacademy.entity.User;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    Optional<User> findByUsername(String username);
+    Optional<User> findByUserName(String userName);
 }

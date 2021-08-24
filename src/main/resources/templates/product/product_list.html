@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista Produktow</title>
+
 </head>
 <body>
-<h1>Lista produktow</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Nazwa</th>
-        <th>Cena</th>
-        <th>Opis</th>
-    </tr>
-    </thead>
-</table>
-<tbody>
-<tr th:each="product : ${products}">
-    <td th:text="${product.id}"></td>
-    <td th:text="${product.name}"></td>
-    <td th:text="${product.price}"></td>
-    <td th:text="${category}"></td>
-    <td th:text="${product.description}"></td>
-</tr>
-</tbody>
-</table>
-<a th:href="@{/product/add}">Dodaj produkt</a>
+<h1>Flizanka</h1>
+
+<h2>Lista produktow</h2>
+<ul th:each="product : ${products}">
+    <strong>
+        <li th:text="${product.name}"></li>
+    </strong>
+    <span th:text="${product.description}"></span>
+    <span th:text="${product.price} + 'zl'"></span>
+</ul>
+<img src="https://image.freepik.com/darmowe-wektory/zestaw-kolekcja-kubkow-do-kawy-i-herbaty-recznie-rysowane-na-bialym-tle-na-bialym-tle-styl-kreskowki-projektowanie-dekoracji-kart-druku-strony-internetowej-plakatow-banerow-t-shirtow_218179-184.jpg" alt="Flizanka">
+
+
 </body>
 </html>
+
+
+

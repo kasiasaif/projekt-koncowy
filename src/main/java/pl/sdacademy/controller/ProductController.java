@@ -51,5 +51,19 @@ public class ProductController {
         return "redirect:/product";
     }
 
+    @GetMapping("/by-category/{categoryId}")
+    public String productsByCategory(@PathVariable int categoryId, ModelMap modelMap) {
+        productRepository.findProductByCategory_Id(categoryId);
+        modelMap.addAttribute("products", productRepository)
+        return "product/by_category";
+
+    }
+//    @GetMapping("/by-category/{categoryId}")
+//    public String productsByCategory(@PathVariable int categoryId, ModelMap modelMap) {
+//        productRepository.findProductByCategory_Id(categoryId);
+//        modelMap.addAttribute("products", productRepository);
+//        return "product/by_category";
+//
+//    }
 
 }

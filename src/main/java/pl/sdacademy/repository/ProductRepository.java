@@ -6,8 +6,8 @@ import pl.sdacademy.entity.Product;
 import java.util.List;
 
 
-public interface ProductRepository extends JpaRepository<Product,Integer> {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-
+    List<Product> findProductByCategory_Id(Integer id);
 
 }
