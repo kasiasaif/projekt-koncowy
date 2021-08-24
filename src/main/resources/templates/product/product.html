@@ -5,18 +5,25 @@
     <title>Dodanie produktu</title>
 </head>
 <body>
-<form  method="post" th:object="${product}">
-<div>
-    <label>Nazwa produktu <input type="text" th:field="*{name}"></label>
-</div>
-<div>
-    <label>Cena: <input type="number" th:field="*{price}"></label>
-</div>
-<div>
-    <label>Opis:  <textarea th:field="*{description}"></textarea></label>
-</div>
-
-<input type="submit" value="Dodaj">
+<form method="post" th:object="${product}">
+    <div>
+        <label>Nazwa produktu <input type="text" th:field="*{name}"></label>
+    </div>
+    <div>
+        <label>Cena: <input type="number" th:field="*{price}"></label>
+    </div>
+ <div>
+<label>
+      <select>
+          <option th:each="category:${categories}" th:text="${category.name}" th:value="${category.id}"></option>
+       </select>
+</label>
+ </div>
+    <div>
+        <label>Opis: <textarea th:field="*{description}"></textarea></label>
+    </div>
+    <input type="submit">
 </form>
 </body>
 </html>
+

@@ -3,10 +3,11 @@ package pl.sdacademy.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.sdacademy.entity.Product;
 
+import java.util.List;
+
 
 public interface ProductRepository extends JpaRepository<Product,Integer> {
 
-//    Product findById (int id);
-//    Product findByName(String name);
-//    List<Product> findByCategoryId(int categoryId);
+
+
 }

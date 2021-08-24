@@ -5,5 +5,5 @@ import pl.sdacademy.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category,Integer> {
 
-//    Category findCategoryByNameByName(String name);
+    Category findCategoryByName(String name);
 }

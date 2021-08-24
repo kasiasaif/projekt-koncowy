@@ -19,13 +19,22 @@ public class Product {
     public Product() {
     }
 
-    public Product(Integer id, String name, int price, String description, String image) {
+    public Product(Integer id, String name, int price, String description, String image,Category category) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.image = image;
+        this.category= category;
 
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Integer getId() {
@@ -76,6 +85,7 @@ public class Product {
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
+                ", category=" + category +
                 '}';
     }
 }
