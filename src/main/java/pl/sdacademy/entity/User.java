@@ -11,10 +11,10 @@ public class User {
     private String firstName;
     private String lastName;
     @Column(unique = true)
-    private String userName;
+    private String username;
     private String password;
     private String email;
-    private LocalDate daterOfBirth;
+    private LocalDate dateOfBirth;
     private String address;
 
     public User() {
@@ -24,10 +24,10 @@ public class User {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.username = userName;
         this.password = password;
         this.email = email;
-        this.daterOfBirth = daterOfBirth;
+        this.dateOfBirth = daterOfBirth;
         this.address = address;
     }
 
@@ -43,8 +43,8 @@ public class User {
         return lastName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
@@ -55,8 +55,8 @@ public class User {
         return email;
     }
 
-    public LocalDate getDaterOfBirth() {
-        return daterOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public String getAddress() {
@@ -75,8 +75,8 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public void setPassword(String password) {
@@ -87,8 +87,8 @@ public class User {
         this.email = email;
     }
 
-    public void setDaterOfBirth(LocalDate daterOfBirth) {
-        this.daterOfBirth = daterOfBirth;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public void setAddress(String address) {
@@ -101,10 +101,10 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
+                ", userName='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", daterOfBirth=" + daterOfBirth +
+                ", daterOfBirth=" + dateOfBirth +
                 ", address='" + address + '\'' +
                 '}';
     }

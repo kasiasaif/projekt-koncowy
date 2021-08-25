@@ -1,14 +1,13 @@
 package pl.sdacademy.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import pl.sdacademy.entity.Category;
 import pl.sdacademy.repository.UserRepository;
 import pl.sdacademy.entity.User;
 
 import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
     private UserRepository userRepository;
@@ -29,8 +28,19 @@ public class UserController {
         return "user/sign_up";
 
     }
+
     @GetMapping("/register_conformation")
     public String register() {
         return "user/register_conformation";
+    }
+    @GetMapping("/add")
+    public String addForm(@ModelAttribute("user") User user) {
+        return "user/register_form";
+    }
+
+    @PostMapping("/add")
+    public String save(User user) {
+        userRepository.save(user);
+        return "redirect:/user";
     }
 }
