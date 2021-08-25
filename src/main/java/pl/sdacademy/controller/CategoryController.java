@@ -31,6 +31,7 @@ public class CategoryController {
     @GetMapping("/add")
     public String addForm(@ModelAttribute("category") Category category) {
         return "category/form";
+
     }
 
 

@@ -49,6 +49,7 @@ public class ProductController {
         product.setCategory(byId);
         productRepository.save(product);
         return "redirect:/product";
+
     }
 
     @GetMapping("/by-category/{categoryId}")
