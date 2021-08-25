@@ -5,21 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <thead>
-<tr>
-    <th>Id:</th>
-    <th>Nazwa</th>
-</tr>
-    </thead>
-</table>
-<tbody>
-<tr th:each="category : ${categories}">
-    <td th:text="${category.id}"></td>
-    <td th:text="${category.name}"></td>
-</tr>
-</tbody>
-</table>
-<a th:href="@{/category/add}">Dodaj kategorię</a>
+
+
+<h2>Lista kategorii</h2>
+
+<li th:each="category: ${categories}"><a th:text="${category.name}" th:href="@{/product/by-category/{id}(id = ${category.id})}"></a></li>
+
 </body>
 </html>

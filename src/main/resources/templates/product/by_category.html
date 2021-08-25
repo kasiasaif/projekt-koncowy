@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista kategorii</title>
+    <title>Lista produktow z kategorii</title>
 </head>
 <body>
-<h2>:)</h2>
-<li th:each="categories: ${category}"><a th:href="@{/product(categoryId=${category.id})}" th:text="${category.name}"></a></li>
-<a th:href="@{'/product/by-category/{id}'(id=${products})}" >
+<h2>Lista produktow z kategorii</h2>
+<ul>
+    <li th:each="product: ${products}"><div th:text="${product.name}"></div></li>
+</ul>
+
 </body>
 </html>

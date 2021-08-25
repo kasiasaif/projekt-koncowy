@@ -53,17 +53,11 @@ public class ProductController {
 
     @GetMapping("/by-category/{categoryId}")
     public String productsByCategory(@PathVariable int categoryId, ModelMap modelMap) {
-        productRepository.findProductByCategory_Id(categoryId);
-        modelMap.addAttribute("products", productRepository)
+        List<Product> products = productRepository.findProductByCategory_Id(categoryId);
+        modelMap.addAttribute("products", products);
         return "product/by_category";
 
     }
-//    @GetMapping("/by-category/{categoryId}")
-//    public String productsByCategory(@PathVariable int categoryId, ModelMap modelMap) {
-//        productRepository.findProductByCategory_Id(categoryId);
-//        modelMap.addAttribute("products", productRepository);
-//        return "product/by_category";
-//
-//    }
+
 
 }
